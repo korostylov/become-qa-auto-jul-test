@@ -10,4 +10,3 @@ def artic_api_client():
 
     yield artic_api_client
     print("End of test.")
-    
