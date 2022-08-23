@@ -1,22 +1,22 @@
 import os
 
+from models.users import User
+
 class UsersProvider:
     
     @staticmethod
     def fake_user():
-        return {
-            'login': 'somelogin123',
-            'id': 12345,
-            'password': 'fake_password'
-        }
+        return User(
+            login = 'somelogin123',
+            password = 'fake_password'
+        )
     
     @staticmethod
     def existing_user():
-        return {
-            'login': 'defunkt',
-            'id': 2,
-            'password': 'password'
-        }
+        return User(
+            login = 'defunkt',
+            password = 'password'
+        )
     
     @staticmethod
     def existing_user_from_env():

@@ -5,13 +5,15 @@ from config.config import Config
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 #@pytest.fixture(scope = 'function/class/module/session')
 @pytest.fixture()
 def github_ui_client():
     driver = webdriver.Chrome(
-        service=Service(r"D:\Projects\Git\become-qa-auto-jul-test\chromedriver.exe")
+        service = Service(ChromeDriverManager().install())
         )
+    driver.maximize_window()
 
     github_ui_client = GitHubUI(Config.BASE_URL_UI, driver)
     
