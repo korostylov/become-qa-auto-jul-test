@@ -1,2 +1,2 @@
 class Config:
-    base_URL = "https://github.com"
+    BASE_URL_UI = "https://github.com"
