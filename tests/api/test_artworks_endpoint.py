@@ -1,6 +1,6 @@
 from config.config import Config
 from providers.data.artworks_provider import ArtworksProvider
-from providers.data.artworks import Artwork
+from models.artworks import Artwork
 from providers.data.base_data import BaseData
 
 class TestArticApiArtworks:

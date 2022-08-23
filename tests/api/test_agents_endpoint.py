@@ -1,5 +1,5 @@
 from config.config import Config
-from providers.data.agents import Agent
+from models.agents import Agent
 from providers.data.agents_provider import AgentsProvider
 from providers.data.base_data import BaseData
 

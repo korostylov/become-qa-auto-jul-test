@@ -1,4 +1,4 @@
-from providers.data.artworks import Artwork
+from models.artworks import Artwork
 from config.config import Config
 
 class ArtworksProvider:

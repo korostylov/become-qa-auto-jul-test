@@ -1,5 +1,5 @@
 from config.config import Config
-from providers.data.places import Place
+from models.places import Place
 from providers.data.places_provider import PlacesProvider
 from providers.data.base_data import BaseData
 

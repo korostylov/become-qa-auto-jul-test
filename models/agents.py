@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from providers.data.base_entity import BaseEntity
+from models.base_entity import BaseEntity
 
 @dataclass
 class Agent(BaseEntity):

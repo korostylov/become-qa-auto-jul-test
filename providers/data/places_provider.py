@@ -1,4 +1,4 @@
-from providers.data.places import Place
+from models.places import Place
 from config.config import Config
 
 class PlacesProvider:

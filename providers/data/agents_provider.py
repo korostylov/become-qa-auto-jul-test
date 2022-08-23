@@ -1,4 +1,4 @@
-from providers.data.agents import Agent
+from models.agents import Agent
 from config.config import Config
 
 class AgentsProvider:
