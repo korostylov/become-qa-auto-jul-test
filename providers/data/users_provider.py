@@ -1,15 +1,15 @@
-import os
-
+from faker import Faker
 from models.users import User
 
 class UsersProvider:
-    
+
     def fake_user():
+        faker = Faker()
         return User(
-            login = 'somelogin123',
-            password = 'fake_password'
+            login = faker.word(),
+            password = faker.word()
         )
-    
+
     def existing_user():
         return User(
             login = 'defunkt',
