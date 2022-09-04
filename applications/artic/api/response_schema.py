@@ -1,4 +1,4 @@
-class BaseData:
+class ResponseSchema:
 
     # fields in response
 
