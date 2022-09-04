@@ -52,7 +52,7 @@ class ArticAPI(HTTPBase):
             tgn_id = resp[ResponseSchema.section_data][ResponseSchema.field_tgn_id]
         )
 
-    def get_not_existing_artwork(self, id):
+    def get_artwork_response_code(self, id):
 
         resp = self.get(
             endpoint = f"{ArticEndpoints.ARTWORKS}/{id}"
@@ -60,7 +60,7 @@ class ArticAPI(HTTPBase):
 
         return  resp["status"]
 
-    def get_not_existing_agent(self, id):
+    def get_agent_response_code(self, id):
 
         resp = self.get(
             endpoint = f"{ArticEndpoints.AGENTS}/{id}"
@@ -68,9 +68,49 @@ class ArticAPI(HTTPBase):
 
         return  resp["status"]
 
-    def get_not_existing_place(self, id):
+    def get_place_response_code(self, id):
 
         resp = self.get(
             endpoint = f"{ArticEndpoints.PLACES}/{id}"
             )
+
         return resp["status"]
+
+    def get_field_total(self, endpoint):
+        resp = self.get(endpoint)
+
+        return resp[ResponseSchema.section_pagination][ResponseSchema.field_total]
+
+    def get_field_website_url(self, endpoint):
+        resp = self.get(endpoint)
+
+        return resp[ResponseSchema.section_config][ResponseSchema.field_website_url]
+
+    def get_length_section_data_with_limit(self, endpoint, limit):
+        resp = self.get(
+            endpoint = endpoint,
+            param_limit = limit
+        )
+
+        return len(resp[ResponseSchema.section_data])
+
+    def get_field_total_pages(self, endpoint):
+        resp = self.get(endpoint)
+
+        return resp[ResponseSchema.section_pagination][ResponseSchema.field_total_pages]
+
+    def get_field_current_page(self, endpoint, page):
+        resp = self.get(
+            endpoint = endpoint,
+            param_page = page
+        )
+
+        return resp[ResponseSchema.section_pagination][ResponseSchema.field_current_page]
+
+    def get_section_data_with_only_title_field(self, endpoint):
+        resp = self.get(
+            endpoint = endpoint,
+            param_fields = ResponseSchema.field_title
+        )
+
+        return resp[ResponseSchema.section_data]

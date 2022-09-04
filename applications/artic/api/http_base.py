@@ -28,8 +28,3 @@ class HTTPBase:
                 "include": param_include,
                 }
             ).json()
-
-    def get_fake_entity(self, endpoint):
-        resp = self.http_session.get(f"{self.base_url}{endpoint}")
-
-        return resp
