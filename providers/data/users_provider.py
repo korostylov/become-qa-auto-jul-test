@@ -3,7 +3,7 @@ from models.users import User
 
 class UsersProvider:
 
-    def fake_user():
+    def generate_fake_user():
         faker = Faker()
         return User(
             login = faker.word(),

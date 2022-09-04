@@ -10,7 +10,7 @@ from providers.data.users_provider import UsersProvider
 
 #@pytest.fixture(scope = 'function/class/module/session')
 @pytest.fixture()
-def github_ui_client():
+def github_ui_client(scope = 'session'):
 
     driver = webdriver.Chrome(
         service = Service(ChromeDriverManager().install())
@@ -24,6 +24,6 @@ def github_ui_client():
     github_ui_client.close_browser()
     print("----- End of tests.")
 
-@pytest.fixture()
+@pytest.fixture(scope = 'function')
 def fake_user():
-    return UsersProvider.fake_user()
+    return UsersProvider.generate_fake_user()
